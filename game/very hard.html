@@ -20,14 +20,23 @@
                         <div id="progressBarFull"></div>
                     </div>
                 </div>
-                <div id="screen-item">
-                    <p class="screen-prefix">
+                <div id="bottom-screen">
+                    <div id="timer">
+                        <p class="timer-prefix">Time Left</p>
+                        <div class="timer-value">
+                          <h id="timerDisplay">10</h>
+                          
+                        </div>
+                      </div>
+                    <div id="screen-item">
+                      <p class="screen-prefix">
                         Score
-                    </p>
-                    <h1 class="screen-main-text" id="score">
+                      </p>
+                      <h1 class="screen-main-text" id="score">
                         0
-                    </h1>
-                </div>
+                      </h1>
+                    </div>
+                  </div>
             </div>
             <h2 id="question"></h2>
             <div class="choice-container">
@@ -49,7 +58,10 @@
         </div>
     </div>
 
-    <script src="./questions/geography_questions.js"></script>
-    <script src="./games/geography_game.js"></script>
+    <audio id="correctSound" src="correct.mp3"></audio>
+    <audio id="incorrectSound" src="incorrect.mp3"></audio>
+
+    <script src="./questions/very_hard_questions.js"></script>
+    <script src="./games/very_hard_game.js"></script>
 </body>
 </html>

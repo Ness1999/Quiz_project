@@ -1,155 +1,202 @@
 .choice-container {
-    display: flex;
-    margin-bottom: 0.5rem;
-    width: 100%;
-    font-size: 1.8rem;
-    border: 0.1rem solid rgb(86, 165, 235, 0.25);
-    background-color: white;
-  }
-
-  /* Add this to your existing styles */
-  
-  .choice-container:hover {
-    cursor: pointer;
-    box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
-    transform: translateY(-0.1rem);
-    transition: transform 150ms;
-  }
-  
-  .choice-prefix {
-    padding: 1.5rem 2.5rem;
-    background-color: #56a5eb;
-    color: white;
-  }
-  
-  .choice-text {
-    padding: 25px;
-    width: 100%;
-  }
-  
-  .correct {
-    background-color: #28a745;
-  }
-  
-  .incorrect {
-    background-color: #dc3545;
-  }
-
-  #question {
-    font-size: 15px;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  /* screen */
-  
-  #screen {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
-
-  #screen-item {
-    text-align: center;
+  display: flex;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  font-size: 1.8rem;
+  border: 0.1rem solid rgb(86, 165, 235, 0.25);
+  background-color: white;
 }
 
-/* Add this to your existing styles */
+.choice-container:hover {
+  cursor: pointer;
+  box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+  transform: translateY(-0.1rem);
+  transition: transform 150ms;
+}
+
+.choice-container.correct {
+  animation: pulse 0.5s ease-in-out;
+}
+
+.choice-container.incorrect {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.2);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+      transform: translateX(0);
+  }
+  50% {
+      transform: translateX(-10px);
+  }
+}
+
+
+.choice-prefix {
+  padding: 1.5rem 2.5rem;
+  background-color: #56a5eb;
+  color: white;
+}
+
+.choice-text {
+  padding: 25px;
+  width: 100%;
+}
+
+.correct {
+  background-color: #28a745;
+}
+
+.incorrect {
+  background-color: #dc3545;
+}
+
+#question {
+  font-size: 18px;
+  margin:20px ;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+}
+
 #screen {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  align-items: center;
 }
-
 #screen-item {
   text-align: center;
-  flex-basis: calc(50% - 1rem); /* Set a fixed width for each screen item with some margin */
+  flex-basis: calc(50% - 1rem);
   margin: 0.5rem;
 }
 
 .screen-main-text {
-  margin: 0; /* Remove default margin */
+  margin: 0;
 }
 
 #progressBar {
-  width: 100%; /* Expand the progress bar to fill its container */
+  width: 100%;
 }
 
-  
+#bottom-screen {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 100%;
+  margin-left: 70px;
+  margin-top: 20px;
+
+}
+
+
+#timer,
+#score {
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin: 0 10px;
+  align-items: center;
+}
+
+
+.timer-prefix,
+.screen-prefix {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+  color: #ffffff;
+
+}
+
+
+
+.timer-value,
+.screen-main-text {
+  margin: 0;
+  font-size: 2rem;
+  color: #ffffff;
+
+}
+
+#timerDisplay {
+  color: #ffffff;
+}
+
+#progressBar {
+  width: 20rem;
+  height: 4rem;
+  border: 0.3rem solid #56a5eb;
+  margin-top: 1.5rem;
+}
+
+#progressBarFull {
+  height: 3.6rem;
+  background-color: #56a5eb;
+  width: 0%;
+}
+
+#loader {
+  border: 1.6rem solid white;
+  border-radius: 50%;
+  border-top: 1.6rem solid #56a5eb;
+  width: 12rem;
+  height: 12rem;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .choice-container {
+    font-size: 1.4rem;
+  }
+
+  .choice-prefix {
+    padding: 1rem 1.5rem;
+  }
+
+  .choice-text {
+    padding: 15px;
+  }
+
+  #question {
+    font-size: 14px;
+  }
+
   .screen-prefix {
-    text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
-  
-  .screen-main-text {
-    text-align: center;
-  }
-  
-  #progressBar {
-    width: 20rem;
-    height: 4rem;
-    border: 0.3rem solid #56a5eb;
-    margin-top: 1.5rem;
-  }
-  
-  #progressBarFull {
-    height: 3.6rem;
-    background-color: #56a5eb;
-    width: 0%;
-  }
-  
-  /* LOADER */
-  #loader {
-    border: 1.6rem solid white;
-    border-radius: 50%;
-    border-top: 1.6rem solid #56a5eb;
-    width: 12rem;
-    height: 12rem;
-    animation: spin 2s linear infinite;
-  }
-  
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-
-
-  @media only screen and (max-width: 768px) {
-    .choice-container {
-        font-size: 1.4rem;
-    }
-
-    .choice-prefix {
-        padding: 1rem 1.5rem;
-    }
-
-    .choice-text {
-        padding: 15px;
-    }
-
-    #question {
-        font-size: 14px;
-    }
-
-    .screen-prefix {
-        font-size: 1.5rem;
-    }
 }
 
 @media only screen and (max-width: 400px) {
-
-  #screen  #screen {
-    flex-direction: column; 
-    align-items: center; 
-}
+  #screen #screen {
+    flex-direction: column;
+    align-items: center;
+  }
 
   .choice-container {
     width: 80%;
-    
   }
-
 }
