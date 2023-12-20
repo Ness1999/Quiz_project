@@ -39,12 +39,16 @@
       <div id="highScores" class="flex-center flex-column">
         <h1 id="finalScore" style="text-align: center;">High Scores</h1>
         <ul id="highScoresList"></ul>
-        <a class="btn" href="../index.html">Go Home</a>
+        <a class="btn" href="../index.html" onclick="playClickSoundAndNavigate(this); return false;">Go Home</a>
       </div>
     </div>
 
+    <audio id="clickSound" src="../click.mp3"></audio>
+
 
     <script>
+
+
 
     const highScoresList = document.getElementById("highScoresList");
     const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
@@ -54,6 +58,26 @@
       return `<li class="high-score">${score.name} - ${score.score}</li>`;
     })
         .join("");
+
+        function playClickSoundAndNavigate(element) {
+        var clickSound = document.getElementById('clickSound');
+
+        // Play the sound
+        clickSound.currentTime = 0;
+        clickSound.play();
+
+        // Add a delay before navigation (500 milliseconds)
+        setTimeout(function () {
+          window.location.href = element.href;
+        }, 450); // Adjust the delay as needed
+
+        // Prevent form submission
+        if (element.tagName.toLowerCase() === 'button') {
+          element.closest('form').addEventListener('submit', function (event) {
+            event.preventDefault();
+          });
+        }
+      }
 
     </script>
 

@@ -11,24 +11,45 @@
   <body>
     <div class="container">
       <div id="end" class="flex-center flex-column">
-        <h1 style="text-align: center; margin-top: 40px;">Your score is</h1>
+        <h1 style="text-align: center; margin-top: 55px;">Your score is</h1>
         <!-- Set the final score text -->
         <h2 id="finalScore" style="color: white;"></h2>
 
         <!-- Display score message here -->
         <p id="scoreMessage" style="color: white; font-size: 30px; margin-bottom: 30px; text-align: center;"></p>
 
-        <form>
-          <input type="text" id="username" placeholder="write your name" autocomplete="off" />
-
-          <button type="button" class="btn" id="saveScoreBtn">
-            Save
-          </button>
+        <form id="saveScoreForm">
+             <input type="text" id="username" placeholder="write your name" autocomplete="off" />
+             <button type="button" class="btn" id="saveScoreBtn" onclick="playClickSoundAndNavigate(this); return false;"> Save </button>
         </form>
-        <a class="btn" href="../index.html">Play Again</a>
-        <a class="btn" href="./highscores.html">High Scores</a>
+         <a class="btn" href="../index.html" onclick="playClickSoundAndNavigate(this); return false;">Play Again</a>
+         <a class="btn" href="./highscores.html" onclick="playClickSoundAndNavigate(this); return false;">High Scores</a>
       </div>
     </div>
+
+    <audio id="clickSound" src="../click.mp3"></audio>
+
+    <script>
+      function playClickSoundAndNavigate(element) {
+        var clickSound = document.getElementById('clickSound');
+
+        // Play the sound
+        clickSound.currentTime = 0;
+        clickSound.play();
+
+        // Add a delay before navigation (500 milliseconds)
+        setTimeout(function () {
+          window.location.href = element.href;
+        }, 450); // Adjust the delay as needed
+
+        // Prevent form submission
+        if (element.tagName.toLowerCase() === 'button') {
+          element.closest('form').addEventListener('submit', function (event) {
+            event.preventDefault();
+          });
+        }
+      }
+    </script>
   
     <script src="./end.js"></script>
   </body>
