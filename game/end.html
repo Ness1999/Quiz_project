@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Congratulations!</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+
+
+
+  <body>
+    <div class="container">
+      <div id="end" class="flex-center flex-column">
+        <!-- Set the final score text -->
+        <h1 id="finalScore"></h1>
+        
+        <!-- Display score message here -->
+        <p id="scoreMessage" style="color: white; font-size: 30px; margin-bottom: 30px;"></p>
+        
+        <form>
+          <input type="text" id="username" />
+          <button type="submit" class="btn" id="saveScoreBtn" onclick="saveHighScore(event)" disabled>
+            Save
+          </button>
+        </form>
+        <a class="btn" href="../index.html">Play Again</a>
+      </div>
+    </div>
+    <script src="./end.js"></script>
+  </body>
+</html>
