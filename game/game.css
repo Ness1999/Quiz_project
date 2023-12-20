@@ -193,6 +193,12 @@
   .screen-prefix {
     font-size: 1.5rem;
   }
+
+  #bottom-screen {
+    flex-direction: column; /* Change to column for stacking on smaller screens */
+    align-items: center;
+    margin-left: 0; /* Remove left margin */
+  }
 }
 
 @media only screen and (max-width: 400px) {
