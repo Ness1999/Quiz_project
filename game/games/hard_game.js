@@ -114,7 +114,7 @@ function updateTimerDisplay(timeLeft) {
 // Constants
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 10;
-const TIMER_DURATION = 10; // Set the duration for each question in seconds
+const TIMER_DURATION = 20; // Set the duration for each question in seconds
 
 // Initial setup
 startGame();
