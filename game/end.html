@@ -8,24 +8,25 @@
     <link rel="stylesheet" href="main.css" />
   </head>
 
-
-
   <body>
     <div class="container">
       <div id="end" class="flex-center flex-column">
+        <h1 style="text-align: center;">Your score is</h1>
         <!-- Set the final score text -->
-        <h1 id="finalScore"></h1>
-        
+        <h2 id="finalScore" style="color: white;"></h2>
+
         <!-- Display score message here -->
         <p id="scoreMessage" style="color: white; font-size: 30px; margin-bottom: 30px;"></p>
-        
+
         <form>
-          <input type="text" id="username" />
-          <button type="submit" class="btn" id="saveScoreBtn" onclick="saveHighScore(event)" disabled>
+          <input type="text" id="username" placeholder="write your name" autocomplete="off" />
+
+          <button type="button" class="btn" id="saveScoreBtn" onclick="saveAndRedirect()">
             Save
           </button>
         </form>
         <a class="btn" href="../index.html">Play Again</a>
+        <a class="btn" href="./highscores.html">High Scores</a>
       </div>
     </div>
     <script src="./end.js"></script>
