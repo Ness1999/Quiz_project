@@ -10,8 +10,26 @@
     <div class="container">
         <div id="home" class="flex-center flex-column">
           <h1>10 Questions Game</h1>
-          <a class="btn" href="choose.html">Play</a>
+          <a class="btn" href="choose.html" onclick="playClickSoundAndNavigate(this); return false;">Play</a>
         </div>
       </div>
+
+      <audio id="clickSound" src="./click.mp3"></audio>
+
+    <script>
+        function playClickSoundAndNavigate(element) {
+            var clickSound = document.getElementById('clickSound');
+            
+            // Play the sound
+            clickSound.currentTime = 0;
+            clickSound.play();
+
+            // Add a delay before navigation (500 milliseconds)
+            setTimeout(function () {
+                window.location.href = element.href;
+            }, 450); // Adjust the delay as needed
+        }
+    </script>
+    
 </body>
 </html>
