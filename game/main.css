@@ -4,7 +4,8 @@ body {
     background-size: cover;
     /* Optionally, you can center the background image */
     background-position: center;
-    height: 100%;
+    min-height: 100vh;
+    background-attachment: fixed;
   }
   
   * {

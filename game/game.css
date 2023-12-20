@@ -199,6 +199,10 @@
     align-items: center;
     margin-left: 0; /* Remove left margin */
   }
+
+  #question {
+    font-size: 20px;
+  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -207,6 +211,8 @@
     align-items: center;
     margin: auto;
   }
+
+ 
 
   .choice-container {
     width: 300px;
